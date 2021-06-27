@@ -4,105 +4,74 @@
 
 <script>
 import mixins from '~/mixins/mixins-component.js'
+const filename = 'components'
 export default {
   mixins: [mixins],
 
   beforeRouteEnter (to, from, next) {
     // eslint-disable-next-line no-console
-    console.log('component beforeRouteEnter [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} beforeRouteEnter [' + (process.server ? 'server' : 'client') + ']`)
     next()
   },
 
   validate () {
     // eslint-disable-next-line no-console
-    console.log('component validate [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} validate [' + (process.server ? 'server' : 'client') + ']`)
     return true
   },
 
   asyncData () {
     // eslint-disable-next-line no-console
-    console.log('component asyncData [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} asyncData [' + (process.server ? 'server' : 'client') + ']`)
     return {}
   },
 
   data () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('component data [server] 24')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('component data [client] 56 90 125')
-    }
+    global.trace(`${filename} data`)
     return {}
   },
 
   fetch () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('component fetch [server] 28')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('component fetch [client] 96 131')
-    }
+    global.trace(`${filename} fetch`)
   },
 
   beforeCreate () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('component beforeCreate [server] 23')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('component beforeCreate [client] 55 89 124')
-    }
+    global.trace(`${filename} beforeCreate`)
   },
 
   created () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('component created [server] 27')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('component created [client] 59 93 128')
-    }
+    global.trace(`${filename} created`)
   },
 
   beforeMount () {
-    // eslint-disable-next-line no-console
-    console.log('component beforeMount [client] 61 95 130')
+    global.trace(`${filename} beforeMount`)
   },
 
   mounted () {
-    // eslint-disable-next-line no-console
-    console.log('component mounted [client] 63 98 133')
+    global.trace(`${filename} mounted`)
   },
 
   beforeUpdate () {
     // eslint-disable-next-line no-console
-    console.log('component beforeUpdate')
+    console.log(`${filename} beforeUpdate`)
   },
 
   updated () {
     // eslint-disable-next-line no-console
-    console.log('component updated')
+    console.log(`${filename} updated`)
   },
 
   beforeDestroy () {
-    // eslint-disable-next-line no-console
-    console.log('component beforeDestroy [client] 74 109')
+    global.trace(`${filename} beforeDestroy`)
   },
 
   destroyed () {
-    // eslint-disable-next-line no-console
-    console.log('component destroyed [client] 76 111')
+    global.trace(`${filename} destroyed`)
   },
 
   beforeEnter: (to, from, next) => {
     // eslint-disable-next-line no-console
-    console.log('component beforeEnter [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} beforeEnter [' + (process.server ? 'server' : 'client') + ']`)
     next()
   }
 

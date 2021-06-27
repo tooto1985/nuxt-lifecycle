@@ -6,13 +6,14 @@
 
 <script>
 import mixins from '@/mixins/mixins-layout.js'
+const filename = 'layouts'
 export default {
   mixins: [mixins],
 
   beforeRouteEnter (to, from, next) {
     // eslint-disable-next-line no-console
     console.log(
-      'layout beforeRouteEnter [' + (process.server ? 'server' : 'client') + ']'
+      `${filename} beforeRouteEnter [' + (process.server ? 'server' : 'client') + ']`
     )
     next()
   },
@@ -20,7 +21,7 @@ export default {
   validate () {
     // eslint-disable-next-line no-console
     console.log(
-      'layout validate [' + (process.server ? 'server' : 'client') + ']'
+      `${filename} validate [' + (process.server ? 'server' : 'client') + ']`
     )
     return true
   },
@@ -28,90 +29,60 @@ export default {
   asyncData () {
     // eslint-disable-next-line no-console
     console.log(
-      'layout asyncData [' + (process.server ? 'server' : 'client') + ']'
+      `${filename} asyncData [' + (process.server ? 'server' : 'client') + ']`
     )
     return {}
   },
 
   data () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('layout data [server] 10')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('layout data [client] 34')
-    }
+    global.trace(`${filename} data`)
     return {}
   },
 
   fetch () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('layout fetch [server] 14')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('layout fetch [client]')
-    }
+    global.trace(`${filename} fetch`)
   },
 
   beforeCreate () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('layout beforeCreate [server] 9')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('layout beforeCreate [client] 33')
-    }
+    global.trace(`${filename} beforeCreate`)
   },
 
   created () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('layout created [server] 13')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('layout created [client] 37')
-    }
+    global.trace(`${filename} created`)
   },
 
   beforeMount () {
-    // eslint-disable-next-line no-console
-    console.log('layout beforeMount [client] 39')
+    global.trace(`${filename} beforeMount`)
   },
 
   mounted () {
-    // eslint-disable-next-line no-console
-    console.log('layout mounted [client] 51')
+    global.trace(`${filename} mounted`)
   },
 
   beforeUpdate () {
     // eslint-disable-next-line no-console
-    console.log('layout beforeUpdate')
+    console.log(`${filename} beforeUpdate`)
   },
 
   updated () {
     // eslint-disable-next-line no-console
-    console.log('layout updated')
+    console.log(`${filename} updated`)
   },
 
   beforeDestroy () {
     // eslint-disable-next-line no-console
-    console.log('layout beforeDestroy')
+    console.log(`${filename} beforeDestroy`)
   },
 
   destroyed () {
     // eslint-disable-next-line no-console
-    console.log('layout destroyed')
+    console.log(`${filename} destroyed`)
   },
 
   beforeEnter: (to, from, next) => {
     // eslint-disable-next-line no-console
     console.log(
-      'layout beforeEnter [' + (process.server ? 'server' : 'client') + ']'
+      `${filename} beforeEnter [' + (process.server ? 'server' : 'client') + ']`
     )
     next()
   }

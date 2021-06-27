@@ -9,123 +9,69 @@
 
 <script>
 import mixins from '~/mixins/mixins-page.js'
+const filename = 'pages index.vue'
 export default {
   mixins: [mixins],
 
   beforeRouteEnter (to, from, next) {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue beforeRouteEnter [server] 3')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue beforeRouteEnter [client] 31 105')
-    }
+    global.trace(`${filename} beforeRouteEnter`)
     next()
   },
 
   validate () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue validate [server] 6')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue validate [client] 102')
-    }
+    global.trace(`${filename} validate`)
     return true
   },
 
   asyncData () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue asyncData [server] 7')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue asyncData [client] 103')
-    }
+    global.trace(`${filename} asyncData`)
     return {}
   },
 
   data () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue data [server] 17')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue data [client] 42 116')
-    }
+    global.trace(`${filename} data`)
     return {}
   },
 
   fetch () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue fetch [server] 21')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue fetch [client] 122')
-    }
+    global.trace(`${filename} fetch`)
   },
 
   beforeCreate () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue beforeCreate [server] 16')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue beforeCreate [client] 41 115')
-    }
+    global.trace(`${filename} beforeCreate`)
   },
 
   created () {
-    if (process.server) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue created [server] 20')
-    }
-    if (process.client) {
-      // eslint-disable-next-line no-console
-      console.log('index.vue created [client] 45 119')
-    }
+    global.trace(`${filename} created`)
   },
 
   beforeMount () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue beforeMount [client] 47 121')
+    global.trace(`${filename} beforeMount`)
   },
 
   mounted () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue mounted [client] 49 135')
+    global.trace(`${filename} mounted`)
   },
 
   beforeUpdate () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue beforeUpdate [client] 53')
+    global.trace(`${filename} beforeUpdate`)
   },
 
   updated () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue updated [client] 65')
+    global.trace(`${filename} updated`)
   },
 
   beforeDestroy () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue beforeDestroy [client] 72')
+    global.trace(`${filename} beforeDestroy`)
   },
 
   destroyed () {
-    // eslint-disable-next-line no-console
-    console.log('index.vue destroyed [client] 78')
+    global.trace(`${filename} destroyed`)
   },
 
   beforeEnter: (to, from, next) => {
     // eslint-disable-next-line no-console
-    console.log('index.vue beforeEnter [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} beforeEnter [' + (process.server ? 'server' : 'client') + ']`)
     next()
   }
 

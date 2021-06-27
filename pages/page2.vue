@@ -9,81 +9,71 @@
 
 <script>
 import mixins from '~/mixins/mixins-page.js'
+const filename = 'pages page2.vue'
 export default {
   mixins: [mixins],
 
   beforeRouteEnter (to, from, next) {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue beforeRouteEnter [client] 70')
+    global.trace(`${filename} beforeRouteEnter`)
     next()
   },
 
   validate () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue validate [client] 67')
+    global.trace(`${filename} validate`)
     return true
   },
 
   asyncData () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue asyncData [client] 68')
+    global.trace(`${filename} asyncData`)
     return {}
   },
 
   data () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue data [client] 81')
+    global.trace(`${filename} data`)
     return {}
   },
 
   fetch () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue fetch [client] 87')
+    global.trace(`${filename} fetch`)
   },
 
   beforeCreate () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue beforeCreate [client] 80')
+    global.trace(`${filename} beforeCreate`)
   },
 
   created () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue created [client] 84')
+    global.trace(`${filename} created`)
   },
 
   beforeMount () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue beforeMount [client] 86')
+    global.trace(`${filename} beforeMount`)
   },
 
   mounted () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue mounted [client] 100')
+    global.trace(`${filename} mounted`)
   },
 
   beforeUpdate () {
     // eslint-disable-next-line no-console
-    console.log('page2.vue beforeUpdate')
+    console.log(`${filename} beforeUpdate`)
   },
 
   updated () {
     // eslint-disable-next-line no-console
-    console.log('page2.vue updated')
+    console.log(`${filename} updated`)
   },
 
   beforeDestroy () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue beforeDestroy [client] 107')
+    global.trace(`${filename} beforeDestroy`)
   },
 
   destroyed () {
-    // eslint-disable-next-line no-console
-    console.log('page2.vue destroyed [client] 113')
+    global.trace(`${filename} destroyed`)
   },
 
   beforeEnter: (to, from, next) => {
     // eslint-disable-next-line no-console
-    console.log('page2.vue beforeEnter [' + (process.server ? 'server' : 'client') + ']')
+    console.log(`${filename} beforeEnter [' + (process.server ? 'server' : 'client') + ']`)
     next()
   }
 
