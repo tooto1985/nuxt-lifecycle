@@ -1,13 +1,13 @@
 Nuxt生命週期大全
 ===
 ## 流程
-1. Server Side Rander (1~36)
-2. Client Side Rander (1~42)
+1. Server Side Render (1~36)
+2. Client Side Render (1~42)
 3. Route Push to Page2 (43~87)
 4. Route Push to Index (88~132)
 
 ## 結果
-# Server Side Rander
+# Server Side Render
 * plugins [server] 1
 * mixins-page beforeRouteEnter [server] 2
 * pages/index.vue beforeRouteEnter [server] 3
@@ -46,7 +46,7 @@ Nuxt生命週期大全
 * components/Logo.vue fetch [server] 36
 
 
-# Client Side Rander
+# Client Side Render
 * plugins [client] 1
 * mixins-page beforeRouteEnter [client] 2
 * pages/index.vue beforeRouteEnter [client] 3
